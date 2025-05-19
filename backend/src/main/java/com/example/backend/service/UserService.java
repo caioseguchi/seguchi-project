@@ -51,4 +51,9 @@ public class UserService {
     public List<User> searchByName(String name) {
         return userRepository.findByNameContainingIgnoreCase(name);
     }
+
+    //Search by email
+    public List<User> searchByEmail(String email){
+        return userRepository.findByEmailContainingIgnoreCase(email);
+    }
 }

@@ -44,8 +44,14 @@ public class UserController {
     }
 
     //Search by name
-    @GetMapping("/search")
+    @GetMapping("/searchname")
     public ResponseEntity<List<User>> searchUserByName(@RequestParam String name){
         return ResponseEntity.ok(userService.searchByName(name));
+    }
+
+    //Search by email
+    @GetMapping("/searchemail")
+    public ResponseEntity<List<User>> searchUserByEmail(@RequestParam String email){
+        return  ResponseEntity.ok(userService.searchByEmail(email));
     }
 }
