@@ -46,4 +46,9 @@ public class UserService {
     public void deleteUser(UUID id){
         userRepository.deleteById(id);
     }
+
+    //search by name
+    public List<User> searchByName(String name) {
+        return userRepository.findByNameContainingIgnoreCase(name);
+    }
 }

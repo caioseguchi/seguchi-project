@@ -4,6 +4,7 @@ import com.example.backend.model.User;
 import com.example.backend.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -40,5 +41,11 @@ public class UserController {
     @DeleteMapping("/{id}")
     public void deleteUser(@PathVariable UUID id) {
         userService.deleteUser(id);
+    }
+
+    //Search by name
+    @GetMapping("/search")
+    public ResponseEntity<List<User>> searchUserByName(@RequestParam String name){
+        return ResponseEntity.ok(userService.searchByName(name));
     }
 }
