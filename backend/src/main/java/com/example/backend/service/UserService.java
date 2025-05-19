@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class UserService {
@@ -24,12 +25,12 @@ public class UserService {
     }
 
     //Find User
-    public Optional<User> getUserById(Long id) {
+    public Optional<User> getUserById(UUID id) {
         return userRepository.findById(id);
     }
 
     //Update User
-    public User updateUser(Long id, User updateUser){
+    public User updateUser(UUID id, User updateUser){
         return userRepository.findById(id)
                 .map(user ->{
                    user.setName(updateUser.getName());
@@ -42,7 +43,7 @@ public class UserService {
     }
 
     //Delete user
-    public void deleteUser(Long id){
+    public void deleteUser(UUID id){
         userRepository.deleteById(id);
     }
 }
