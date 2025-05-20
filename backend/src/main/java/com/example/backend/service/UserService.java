@@ -1,5 +1,6 @@
 package com.example.backend.service;
 
+import com.example.backend.exception.EmailAlreadyInUseException;
 import com.example.backend.model.User;
 import com.example.backend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,9 @@ public class UserService {
 
     //Save
     public User createUser(User user){
+        if (userRepository.existsByEmail(user.getEmail())) {
+            throw new EmailAlreadyInUseException(user.getEmail());
+        }
         return userRepository.save(user);
     }
 

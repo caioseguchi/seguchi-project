@@ -1,6 +1,7 @@
 package com.example.backend.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
@@ -18,7 +19,8 @@ public class User {
     private UUID id;
 
     @NotBlank
-    @Column(name = "Email", unique = true)
+    @Email
+    @Column(name = "Email", unique = true, nullable = false)
     private String email;
 
     @NotBlank
