@@ -1,6 +1,7 @@
 package com.example.backend.service;
 
 import com.example.backend.exception.EmailAlreadyInUseException;
+import com.example.backend.exception.UserNotFoundException;
 import com.example.backend.model.User;
 import com.example.backend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,16 +49,28 @@ public class UserService {
 
     //Delete user
     public void deleteUser(UUID id){
+        if (!userRepository.existsById(id)) {
+            throw new UserNotFoundException("User with id" + id + "not found");
+        }
         userRepository.deleteById(id);
     }
 
     //search by name
     public List<User> searchByName(String name) {
-        return userRepository.findByNameContainingIgnoreCase(name);
+        List<User> users = userRepository.findByNameContainingIgnoreCase(name);
+        if (users.isEmpty()){
+            throw new UserNotFoundException("No users found with name: " + name);
+        }
+        return users;
     }
 
     //Search by email
     public List<User> searchByEmail(String email){
-        return userRepository.findByEmailContainingIgnoreCase(email);
+        List<User> users = userRepository.findByEmailContainingIgnoreCase(email);
+        if (users.isEmpty()){
+            throw new RuntimeException("Nos users found with email: " + email);
+        }
+        return users;
     }
+
 }

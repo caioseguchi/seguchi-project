@@ -5,11 +5,18 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, UUID> {
     List<User> findByNameContainingIgnoreCase(String name);
     List<User> findByEmailContainingIgnoreCase(String email);
+    boolean existsById(UUID id);
+    boolean existsByName(String name);
+
     boolean existsByEmail(String email);
+
+    // Busca por email exato (ex: autenticação)
+    Optional<User> findByEmail(String email);
 }
