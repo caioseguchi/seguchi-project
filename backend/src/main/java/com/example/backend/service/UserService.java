@@ -40,7 +40,6 @@ public class UserService {
                    user.setName(updateUser.getName());
                    user.setEmail(updateUser.getEmail());
                    user.setPassword(updateUser.getPassword());
-                   user.setRole(updateUser.getRole());
                    return userRepository.save(user);
                 })
         .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
