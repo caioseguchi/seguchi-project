@@ -3,6 +3,7 @@ import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { FormLayoutComponent } from '../../components/form-layout/form-layout.component';
 import { FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { PrimaryInputComponent } from '../../components/primary-input/primary-input.component';
 
 @Component({
   selector: 'app-login',
@@ -12,6 +13,7 @@ import { FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
     FooterComponent,
     FormLayoutComponent,
     ReactiveFormsModule,
+    PrimaryInputComponent,
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',

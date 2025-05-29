@@ -6,7 +6,25 @@
       primaryBntText="Login Now"
       secondaryBntText="Singup Now"
     >
-      <form [formGroup]="loginForm"></form>
+      <form [formGroup]="loginForm">
+        <app-primary-input
+          formName="email"
+          type="email"
+          label="Email"
+          placeholder="caio@gmail.com"
+        >
+          <i class="bi bi-envelope"></i>
+        </app-primary-input>
+      </form>
+      <form [formGroup]="loginForm">
+        <app-primary-input
+          formName="password"
+          type="password"
+          label="Your Password"
+        >
+          <i class="bi bi-lock"></i>
+        </app-primary-input>
+      </form>
     </app-form-layout>
   </main>
   <app-footer></app-footer>
