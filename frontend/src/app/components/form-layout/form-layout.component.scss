@@ -1,0 +1,85 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/font.scss";
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin: 40px;
+
+  color: $text-color;
+  background-color: $black-bg;
+  font-family: $font-primary;
+  width: 350px;
+
+  border: solid 1px;
+  border-radius: 4px;
+
+  h2 {
+    font-size: 20px;
+    font-family: $font-primary;
+    font-weight: bold;
+    margin-bottom: 45px;
+  }
+
+  .btn-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 30px;
+  }
+
+  .divider {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+
+    font-size: 14px;
+    color: $text-color;
+    font-weight: 400;
+    text-transform: uppercase;
+
+    div {
+      flex-grow: 1;
+      min-width: 50px;
+      height: 1px;
+      background-color: $primary-color;
+    }
+  }
+
+  button {
+    width: 100%;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    background-color: transparent;
+    padding: 12px 24px;
+    cursor: pointer;
+
+    &.btn-primary {
+      background-color: $primary-color;
+      color: $text-color;
+      box-shadow: 2%;
+    }
+
+    &.btn-secondary {
+      border: 1px solid $primary-color;
+      color: $primary-color;
+    }
+  }
+}

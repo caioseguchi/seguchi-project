@@ -1,14 +1,49 @@
 <div class="home">
   <app-navbar></app-navbar>
-  <div class="home-content">
+  <div class="home-content container">
     <div class="text-content">
       <h1>Caio Seguchi</h1>
-      <p>I Love coding</p>
-      <button>Start</button>
+      <p>
+        Fullstack Developer passionate about building clean, scalable, and
+        user-focused web applications.
+      </p>
+      <app-g-button></app-g-button>
     </div>
     <div class="img-content">
-      <img src="" alt="Profile Picture" />
+      <img
+        class="img-profile"
+        src="images/profile-picture.png"
+        alt="Profile Picture"
+      />
     </div>
   </div>
-  <p>home works!</p>
+  <div class="container">
+    <div class="project-info">
+      <h2>Project Overview</h2>
+      <p>
+        This site is a fullstack web application built with Angular and Spring
+        Boot. It features authentication, role-based access (Admin & User), and
+        project management functionality.
+      </p>
+
+      <p>
+        Authenticated users can register, log in, and manage their personal task
+        list — similar to a calendar — with CRUD operations for tasks (day,
+        hour, description). Users can only access and edit their own tasks.
+      </p>
+
+      <p>
+        Administrators have extended privileges: they can view all users,
+        perform user searches, and delete accounts when necessary.
+      </p>
+    </div>
+    <div class="future-plans">
+      <h2>Coming Soon</h2>
+      <p>
+        Additional projects will be added in the future, showcasing more complex
+        features, integrations, and advanced use of cloud infrastructure.
+      </p>
+    </div>
+  </div>
+  <app-footer></app-footer>
 </div>

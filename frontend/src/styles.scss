@@ -1,16 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
 @import "bootstrap/scss/bootstrap";
 @import "styles/variables.scss";
+@import "styles/font.scss";
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
 }
 
 html,
 body {
   height: 100%;
   background-color: $black-bg;
+}
+
+h1 {
+  font-size: 44px;
+  font-family: $font-primary;
+}
+
+h2 {
+  font-size: 34px;
+  font-family: $font-primary;
+}
+
+h3 {
+  font-size: 24px;
+  font-family: $font-primary;
+}
+
+p {
+  font-family: $font-code;
+  font-size: 14px;
 }
