@@ -2,7 +2,12 @@ import { Component } from '@angular/core';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { FormLayoutComponent } from '../../components/form-layout/form-layout.component';
-import { FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormGroup,
+  FormControl,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { PrimaryInputComponent } from '../../components/primary-input/primary-input.component';
 
 @Component({
@@ -22,8 +27,8 @@ export class LoginComponent {
   loginForm!: FormGroup;
   constructor() {
     this.loginForm = new FormGroup({
-      email: new FormGroup('', [Validators.required, Validators.email]),
-      password: new FormGroup('', [
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [
         Validators.required,
         Validators.minLength(6),
       ]),

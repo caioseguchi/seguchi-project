@@ -4,26 +4,29 @@
     <app-form-layout
       title="Login into your account"
       primaryBntText="Login Now"
-      secondaryBntText="Singup Now"
+      secondaryBntText="Signup Now"
     >
       <form [formGroup]="loginForm">
         <app-primary-input
-          formName="email"
+          formControlName="email"
+          inputName="email"
           type="email"
           label="Email"
-          placeholder="caio@gmail.com"
+          placeholder="joaomendes@gmail.com"
         >
           <i class="bi bi-envelope"></i>
         </app-primary-input>
-      </form>
-      <form [formGroup]="loginForm">
+
         <app-primary-input
-          formName="password"
+          formControlName="password"
+          inputName="password"
           type="password"
           label="Your Password"
         >
           <i class="bi bi-lock"></i>
         </app-primary-input>
+
+        <span>Forgot password</span>
       </form>
     </app-form-layout>
   </main>
