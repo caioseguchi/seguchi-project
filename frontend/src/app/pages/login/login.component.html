@@ -5,6 +5,9 @@
       title="Login into your account"
       primaryBntText="Login Now"
       secondaryBntText="Signup Now"
+      (submit)="submit()"
+      (navigate)="navigate()"
+      [disablePrimaryBtn]="!loginForm.valid"
     >
       <form [formGroup]="loginForm">
         <app-primary-input

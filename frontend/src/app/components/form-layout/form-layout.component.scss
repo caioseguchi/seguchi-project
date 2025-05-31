@@ -70,9 +70,13 @@ main {
     padding: 12px 24px;
     cursor: pointer;
 
+    &:disabled {
+      opacity: 0.5;
+    }
+
     &.btn-primary {
       background-color: $primary-color;
-      color: $text-color;
+      color: $black-secondary-bg;
       box-shadow: 2%;
     }
 
