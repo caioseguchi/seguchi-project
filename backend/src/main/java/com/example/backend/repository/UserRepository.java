@@ -12,11 +12,10 @@ import java.util.UUID;
 public interface UserRepository extends JpaRepository<User, UUID> {
     List<User> findByNameContainingIgnoreCase(String name);
     List<User> findByEmailContainingIgnoreCase(String email);
+
+    Optional<User> findByEmail(String email);
+
     boolean existsById(UUID id);
     boolean existsByName(String name);
-
     boolean existsByEmail(String email);
-
-    // Busca por email exato (ex: autenticação)
-    Optional<User> findByEmail(String email);
 }
