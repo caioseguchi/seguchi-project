@@ -53,6 +53,6 @@ public class TokenService {
 
     //Function expire the time of login
     private Instant generateExpirationDate(){
-        return LocalDateTime.now().plusHours(2).toInstant(ZoneOffset.of("01:00"));
+        return LocalDateTime.now().plusHours(2).toInstant(ZoneOffset.of("+01:00"));
     }
 }
