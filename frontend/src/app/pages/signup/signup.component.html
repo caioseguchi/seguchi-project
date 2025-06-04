@@ -1,0 +1,54 @@
+<div class="login">
+  <app-navbar></app-navbar>
+  <main>
+    <app-form-layout
+      title="Sign in and start today"
+      primaryBntText="Singuo Now"
+      secondaryBntText="Login Now"
+      (submit)="submit()"
+      (navigate)="navigate()"
+      [disablePrimaryBtn]="!signupForm.valid"
+    >
+      <form [formGroup]="signupForm">
+        <app-primary-input
+          formControlName="name"
+          inputName="name"
+          type="text"
+          label="Name"
+          placeholder="Joao Mendes"
+        >
+          <i class="bi bi-person"></i>
+        </app-primary-input>
+
+        <app-primary-input
+          formControlName="email"
+          inputName="email"
+          type="email"
+          label="Email"
+          placeholder="joaomendes@gmail.com"
+        >
+          <i class="bi bi-envelope"></i>
+        </app-primary-input>
+
+        <app-primary-input
+          formControlName="password"
+          inputName="password"
+          type="password"
+          label="Password"
+        >
+          <i class="bi bi-lock"></i>
+        </app-primary-input>
+
+        <app-primary-input
+          formControlName="passwordConfirm"
+          inputName="passwordConfirm"
+          type="password"
+          label="Confirm your Password"
+        >
+          <i class="bi bi-lock"></i>
+        </app-primary-input>
+      </form>
+    </app-form-layout>
+  </main>
+  <app-footer></app-footer>
+</div>

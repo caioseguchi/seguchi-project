@@ -1,0 +1,41 @@
+@import "../../../styles/variables.scss";
+
+.home {
+  height: 100%;
+  color: $text-color;
+  gap: 40px;
+}
+
+.home-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  // Responsividade: quando for menor que 768px, empilha as colunas
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.text-content {
+  flex: 1 1 60%;
+}
+
+.img-content {
+  flex: 1 1 35%;
+  display: flex;
+  justify-content: center;
+}
+
+.img-profile {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid $secondary-color;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
