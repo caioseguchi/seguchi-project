@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { FormLayoutComponent } from '../../components/form-layout/form-layout.component';
 import {
@@ -24,7 +23,6 @@ interface SignupForm {
   selector: 'app-singup',
   standalone: true,
   imports: [
-    NavbarComponent,
     FooterComponent,
     FormLayoutComponent,
     ReactiveFormsModule,
@@ -73,6 +71,6 @@ export class SignUpComponent {
   }
 
   navigate() {
-    this.router.navigate(['singup']);
+    this.router.navigate(['login']);
   }
 }
