@@ -53,3 +53,23 @@
     background-color: $black-secondary-bg;
   }
 }
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 12px;
+  background-color: $black-secondary-bg;
+}
+
+.footer-link {
+  color: $text-color;
+
+  &:hover {
+    color: $primary-color;
+  }
+
+  i {
+    font-size: 1.2rem; // ícones um pouco maiores
+  }
+}

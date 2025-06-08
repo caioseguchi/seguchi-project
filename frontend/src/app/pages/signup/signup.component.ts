@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FooterComponent } from '../../components/footer/footer.component';
 import { FormLayoutComponent } from '../../components/form-layout/form-layout.component';
 import {
   FormGroup,
@@ -22,12 +21,7 @@ interface SignupForm {
 @Component({
   selector: 'app-singup',
   standalone: true,
-  imports: [
-    FooterComponent,
-    FormLayoutComponent,
-    ReactiveFormsModule,
-    PrimaryInputComponent,
-  ],
+  imports: [FormLayoutComponent, ReactiveFormsModule, PrimaryInputComponent],
   providers: [LoginService],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.scss',

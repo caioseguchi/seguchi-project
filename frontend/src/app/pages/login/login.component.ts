@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FooterComponent } from '../../components/footer/footer.component';
 import { FormLayoutComponent } from '../../components/form-layout/form-layout.component';
 import {
   FormGroup,
@@ -20,12 +19,7 @@ interface LoginForm {
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [
-    FooterComponent,
-    FormLayoutComponent,
-    ReactiveFormsModule,
-    PrimaryInputComponent,
-  ],
+  imports: [FormLayoutComponent, ReactiveFormsModule, PrimaryInputComponent],
   providers: [LoginService],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
