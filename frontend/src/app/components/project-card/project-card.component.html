@@ -1,0 +1,17 @@
+<div class="project-card">
+  <h2>{{ title }}</h2>
+  <p>{{ description }}</p>
+
+  <div class="technologies">
+    <strong>Technologies:</strong>
+    <ul>
+      @for (tech of technologies; track tech) {
+      <li>{{ tech }}</li>
+      }
+    </ul>
+  </div>
+
+  <a routerLink="buttonLink" target="-blanck" rel="noopener noreferrer">
+    <button>View Project</button>
+  </a>
+</div>

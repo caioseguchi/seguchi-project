@@ -1,1 +1,56 @@
-<p>projects works!</p>
+<main class="container">
+  <div class="top-page">
+    <h1>My Projects</h1>
+
+    <div class="title-text">
+      <p>
+        I'm always looking for ways to learn by doing, which is why I created
+        this site. "Seguchi" is my first project using Angular — a framework I
+        was curious about and decided to explore. Rather than play it safe, I
+        wanted to challenge myself and build something fun and useful while
+        learning.
+      </p>
+
+      <p>
+        This portfolio is where I put into practice what I learned during my
+        time at NCI, as well as new topics I'm studying. Thanks for visiting —
+        feel free to explore my projects!
+      </p>
+    </div>
+  </div>
+
+  <div class="projects-card">
+    <app-project-card
+      [title]="'Seguchi'"
+      [description]="
+        'My first Angular project where I explore full-stack development.'
+      "
+      [technologies]="['Angular', 'TypeScript', 'HTML', 'CSS']"
+      [buttonLink]="'login'"
+    ></app-project-card>
+    <app-project-card
+      [title]="'Weatherforcas'"
+      [description]="
+        'My first Angular project where I explore full-stack development.'
+      "
+      [technologies]="['Angular', 'TypeScript', 'HTML', 'CSS']"
+      [buttonLink]="'login'"
+    ></app-project-card>
+    <app-project-card
+      [title]="'Money'"
+      [description]="
+        'My first Angular project where I explore full-stack development.'
+      "
+      [technologies]="['Angular', 'TypeScript', 'HTML', 'CSS']"
+      [buttonLink]="'login'"
+    ></app-project-card>
+    <app-project-card
+      [title]="'chatbox'"
+      [description]="
+        'My first Angular project where I explore full-stack development.'
+      "
+      [technologies]="['Angular', 'TypeScript', 'HTML', 'CSS']"
+      [buttonLink]="'login'"
+    ></app-project-card>
+  </div>
+</main>
