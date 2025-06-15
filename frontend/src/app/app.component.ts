@@ -4,6 +4,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { CommonModule } from '@angular/common';
 import { ProjectsComponent } from './pages/projects/projects.component';
+import { ResumeComponent } from './pages/resume/resume.component';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,7 @@ import { ProjectsComponent } from './pages/projects/projects.component';
     HomeComponent,
     LoginComponent,
     ProjectsComponent,
+    ResumeComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

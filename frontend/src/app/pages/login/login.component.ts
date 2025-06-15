@@ -54,6 +54,6 @@ export class LoginComponent {
   }
 
   navigate() {
-    this.router.navigate(['singup']);
+    this.router.navigate(['signup']);
   }
 }
