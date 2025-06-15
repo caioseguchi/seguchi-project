@@ -9,7 +9,16 @@ main {
 
 .top-page.container {
   max-width: 1200px;
-  margin: 0 auto;
+}
+
+.top-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
+  gap: 20px;
+
+  margin-top: 40px;
 }
 
 .projects-card {

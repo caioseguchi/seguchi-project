@@ -11,7 +11,13 @@
     </ul>
   </div>
 
-  <a routerLink="buttonLink" target="-blanck" rel="noopener noreferrer">
+  @if(isExternalLink()){
+  <a [href]="buttonLink" target="_blank" rel="noopener noreferrer">
     <button>View Project</button>
   </a>
+  } @else {
+  <a [routerLink]="buttonLink">
+    <button>View Project</button>
+  </a>
+  }
 </div>

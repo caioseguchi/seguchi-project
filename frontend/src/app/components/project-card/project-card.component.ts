@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { HomeComponent } from '../../pages/home/home.component';
 import { CommonModule } from '@angular/common';
@@ -21,4 +21,8 @@ export class ProjectCardComponent {
   @Input() description!: string;
   @Input() technologies!: string[];
   @Input() buttonLink!: string;
+
+  isExternalLink(): boolean {
+    return this.buttonLink?.startsWith('http');
+  }
 }
