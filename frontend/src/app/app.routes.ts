@@ -4,6 +4,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { SignUpComponent } from './pages/signup/signup.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { ResumeComponent } from './pages/resume/resume.component';
+import { TaskComponent } from './pages/task/task.component';
 
 export const routes: Routes = [
   {
@@ -25,5 +26,9 @@ export const routes: Routes = [
   {
     path: 'resume',
     component: ResumeComponent,
+  },
+  {
+    path: 'task',
+    component: TaskComponent,
   },
 ];

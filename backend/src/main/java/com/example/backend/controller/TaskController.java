@@ -1,6 +1,7 @@
 package com.example.backend.controller;
 
 import com.example.backend.model.Task;
+import com.example.backend.model.User;
 import com.example.backend.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,6 +19,10 @@ public class TaskController {
     public List<Task> getUserTask(@PathVariable UUID userId){
         return taskService.getTasksByUser(userId);
     }
+
+    @GetMapping
+    public List<Task> getAllTasks() {return taskService.getAllTasks();}
+
 
     @PostMapping("/user/{userId}")
     public Task createTaskForUser(@PathVariable UUID userId, @RequestBody Task task){

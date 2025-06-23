@@ -23,6 +23,10 @@ public class TaskService {
         return taskRepository.findByUserId(userId);
     }
 
+    //Read all
+    public List<Task> getAllTasks(){ return taskRepository.findAll();}
+
+
     //Post
     public Task addTaskToUser(UUID userId, Task task) {
         User user = userRepository.findById(userId)
