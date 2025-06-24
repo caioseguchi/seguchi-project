@@ -8,8 +8,24 @@
   padding: 16px;
   margin-bottom: 16px;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: space-between;
+
+  height: 550px;
+
   h2 {
     margin-top: 0;
+  }
+
+  p {
+    height: 230px;
+  }
+
+  .technologies {
+    height: 150px;
   }
 
   .technologies ul {

@@ -5,6 +5,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { CommonModule } from '@angular/common';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { ResumeComponent } from './pages/resume/resume.component';
+import { ContactPostComponent } from './pages/contact-post/contact-post.component';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +19,7 @@ import { ResumeComponent } from './pages/resume/resume.component';
     LoginComponent,
     ProjectsComponent,
     ResumeComponent,
+    ContactPostComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

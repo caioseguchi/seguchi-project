@@ -1,0 +1,61 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/font.scss";
+
+* {
+  color: $text-color;
+  font-family: $font-code;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-top: 10px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin: 40px;
+
+  color: $text-color;
+  background-color: $black-secondary-bg;
+  font-family: $font-primary;
+  width: 300px;
+
+  border-radius: 10px;
+
+  h2 {
+    font-size: 20px;
+    font-family: $font-primary;
+    font-weight: bold;
+    margin-bottom: 45px;
+  }
+}
+
+button {
+  width: 100%;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  background-color: transparent;
+  padding: 12px 24px;
+  cursor: pointer;
+
+  margin-top: 20px;
+
+  &:hover {
+    opacity: 0.5;
+  }
+
+  &.btn-primary {
+    background-color: $primary-color;
+    color: $black-secondary-bg;
+    box-shadow: 2%;
+  }
+}
