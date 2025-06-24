@@ -1,0 +1,76 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/font.scss";
+
+main {
+  margin-top: 40px;
+  height: 100%;
+}
+
+table {
+  width: 100%;
+  //border with radius
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 8px;
+  overflow: hidden;
+
+  font-family: $font-code;
+  color: $text-color;
+  background-color: $black-secondary-bg;
+  margin-top: 20px;
+
+  border: 1px solid $text-color;
+
+  thead {
+    background-color: $black-bg;
+
+    th {
+      padding: 12px;
+      font-family: $font-primary;
+      font-size: 16px;
+      text-align: left;
+      color: $secondary-color;
+      width: 25%;
+    }
+  }
+
+  tbody {
+    td {
+      padding: 10px 12px;
+      border-top: 1px solid $text-color;
+    }
+  }
+}
+
+// Buttons
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: $font-code;
+  cursor: pointer;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.btn-primary {
+  background-color: $primary-color;
+  color: $black-secondary-bg;
+  margin-bottom: 20px;
+}
+
+.btn-update {
+  background-color: lighten($primary-color, 15%);
+  color: $black-secondary-bg;
+  margin-right: 10px;
+}
+
+.btn-delete {
+  background-color: #d32f2f;
+  color: $secondary-color;
+}

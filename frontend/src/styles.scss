@@ -20,6 +20,12 @@ body {
   flex-direction: column;
 }
 
+main {
+  min-height: 100vh;
+  margin-top: 40px;
+  padding: 20px;
+}
+
 h1 {
   font-size: 44px;
   font-family: $font-primary;
