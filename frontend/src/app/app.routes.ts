@@ -7,6 +7,7 @@ import { ResumeComponent } from './pages/resume/resume.component';
 import { TaskComponent } from './pages/task/task.component';
 import { ContactPostComponent } from './pages/contact-post/contact-post.component';
 import { ContactGetAllComponent } from './pages/contact-get-all/contact-get-all.component';
+import { ContactUpdateComponent } from './pages/contact-update/contact-update.component';
 
 export const routes: Routes = [
   {
@@ -40,5 +41,9 @@ export const routes: Routes = [
   {
     path: 'contacts',
     component: ContactGetAllComponent,
+  },
+  {
+    path: 'update-contact',
+    component: ContactUpdateComponent,
   },
 ];

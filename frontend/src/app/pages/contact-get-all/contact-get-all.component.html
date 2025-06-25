@@ -1,5 +1,7 @@
 <main class="container">
-  <button class="btn btn-primary">Post New Customer</button>
+  <button class="btn btn-primary" routerLink="/contact">
+    Post New Customer
+  </button>
 
   <table>
     <thead>
@@ -11,15 +13,19 @@
       </tr>
     </thead>
     <tbody>
+      @for(contact of contacts; track contact.id){
       <tr>
-        <td>name</td>
-        <td>email</td>
-        <td>phone</td>
+        <td>{{ contact.name }}</td>
+        <td>{{ contact.email }}</td>
+        <td>{{ contact.phone }}</td>
         <td>
-          <button class="btn btn-update">Update</button>
+          <button class="btn btn-update" routerLink="/update-contact">
+            Update
+          </button>
           <button class="btn btn-delete">Delete</button>
         </td>
       </tr>
+      }
     </tbody>
   </table>
 </main>

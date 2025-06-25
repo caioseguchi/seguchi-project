@@ -21,4 +21,19 @@ public class ContactService {
     public List<Contact> getAllContact(){
         return contactRepository.findAll();
     }
+
+    //Get by id
+    public Contact getContactById(Long id){
+        return contactRepository.findById(id).orElse(null);
+    }
+
+    //Update
+    public Contact updateContact(Contact contact){
+        return contactRepository.save(contact);
+    }
+
+    //Delete
+    public void deleteContact(Long id){
+        contactRepository.deleteById(id);
+    }
 }

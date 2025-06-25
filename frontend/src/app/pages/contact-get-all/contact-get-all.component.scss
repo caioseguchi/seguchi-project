@@ -67,10 +67,11 @@ table {
 .btn-update {
   background-color: lighten($primary-color, 15%);
   color: $black-secondary-bg;
-  margin-right: 10px;
+  margin: 4px;
 }
 
 .btn-delete {
   background-color: #d32f2f;
   color: $secondary-color;
+  margin: 4px;
 }

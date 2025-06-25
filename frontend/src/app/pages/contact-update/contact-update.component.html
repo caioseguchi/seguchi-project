@@ -1,1 +1,43 @@
-<p>contact-update works!</p>
+<main class="container">
+  <div class="form-container">
+    <h2 class="form-title">Update Contact</h2>
+    <form>
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          placeholder="Luci Souza"
+          required
+          formControlName="name"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input
+          type="text"
+          class="form-control"
+          id="email"
+          placeholder="luci@gmail.com"
+          required
+          formControlName="email"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="name" class="form-label">Phone</label>
+        <input
+          type="text"
+          class="form-control"
+          id="phone"
+          name="phone"
+          placeholder="328165487"
+          required
+          formControlName="phone"
+        />
+      </div>
+
+      <button class="btn-primary" type="submit">Update</button>
+    </form>
+  </div>
+</main>
