@@ -10,7 +10,13 @@ const BASIC_URL = ['http://localhost:8080'];
 export class ContactService {
   constructor(private http: HttpClient) {}
 
+  //Save Contact
   postContact(contact: any): Observable<any> {
-    return this.http.post(BASIC_URL + '/api-contact', contact);
+    return this.http.post(BASIC_URL + '/api/contact', contact);
+  }
+
+  //List of all contacts
+  getAllContacts(): Observable<any> {
+    return this.http.get(BASIC_URL + '/api/contact');
   }
 }
