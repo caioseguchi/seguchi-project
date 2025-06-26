@@ -16,13 +16,13 @@ public class ContactController {
     private ContactService contactService;
 
     //Save Contact
-    @PostMapping
+    @PostMapping("/contact")
     public Contact postContact(@RequestBody Contact contact){
         return contactService.postContact(contact);
     }
 
     //Get all contacts
-    @GetMapping
+    @GetMapping("/contact")
     private List<Contact> getAllContacts(){
         return contactService.getAllContact();
     }

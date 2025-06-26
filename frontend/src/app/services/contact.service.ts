@@ -12,16 +12,26 @@ export class ContactService {
 
   //Save Contact
   postContact(contact: any): Observable<any> {
-    return this.http.post(BASIC_URL + '/api-contact', contact);
+    return this.http.post(BASIC_URL + '/api-contact/contact', contact);
   }
 
   //List of all contacts
   getAllContacts(): Observable<any> {
-    return this.http.get(BASIC_URL + '/api-contact');
+    return this.http.get(BASIC_URL + '/api-contact/contact');
   }
 
   //Contact by Id
   getContactById(id: number): Observable<any> {
-    return this.http.get(BASIC_URL + '/api-contact' + id);
+    return this.http.get(BASIC_URL + '/api-contact/contact/' + id);
+  }
+
+  //Update
+  updateContactById(id: number, contact: any): Observable<any> {
+    return this.http.put(BASIC_URL + '/api-contact/contact/' + id, contact);
+  }
+
+  //Delete
+  deleteContactById(id: number): Observable<any> {
+    return this.http.delete(BASIC_URL + '/api-contact/contact/' + id);
   }
 }

@@ -19,10 +19,15 @@
         <td>{{ contact.email }}</td>
         <td>{{ contact.phone }}</td>
         <td>
-          <button class="btn btn-update" routerLink="/update-contact">
+          <button
+            class="btn btn-update"
+            routerLink="/update-contact/{{ contact.id }}"
+          >
             Update
           </button>
-          <button class="btn btn-delete">Delete</button>
+          <button class="btn btn-delete" (click)="deleteContact(contact.id)">
+            Delete
+          </button>
         </td>
       </tr>
       }

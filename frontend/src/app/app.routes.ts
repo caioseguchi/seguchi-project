@@ -43,7 +43,7 @@ export const routes: Routes = [
     component: ContactGetAllComponent,
   },
   {
-    path: 'update-contact',
+    path: 'update-contact/:id',
     component: ContactUpdateComponent,
   },
 ];

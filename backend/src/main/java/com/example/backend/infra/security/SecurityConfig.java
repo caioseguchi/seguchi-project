@@ -39,7 +39,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
                         .requestMatchers(HttpMethod.POST, "/auth/register").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api-contact/**").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/api-contact").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api-contact/**").permitAll()
                         .requestMatchers(HttpMethod.PUT, "/api-contact/**").permitAll()
                         .requestMatchers(HttpMethod.DELETE, "/api-contact/**").permitAll()
                         .anyRequest().authenticated()

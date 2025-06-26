@@ -24,4 +24,11 @@ export class ContactGetAllComponent {
       this.contacts = res;
     });
   }
+
+  deleteContact(id: number) {
+    this.contactService.deleteContactById(id).subscribe((res) => {
+      console.log(res);
+      this.getAllContact();
+    });
+  }
 }

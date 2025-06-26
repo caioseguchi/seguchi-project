@@ -40,7 +40,7 @@ export class ContactPostComponent implements OnInit {
       .postContact(this.contactPostForm.value)
       .subscribe((res) => {
         console.log(res);
-        this.router.navigateByUrl('contacts');
+        this.router.navigateByUrl('/contacts');
       });
   }
 }
