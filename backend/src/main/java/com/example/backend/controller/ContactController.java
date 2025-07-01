@@ -9,55 +9,32 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api-contact")
+@RequestMapping("/users/{userId}/contacts")
 @CrossOrigin("*")
 public class ContactController {
+
     @Autowired
     private ContactService contactService;
 
-    //Save Contact
-    @PostMapping("/contact")
-    public Contact postContact(@RequestBody Contact contact){
-        return contactService.postContact(contact);
+    @PostMapping
+    public ResponseEntity<Contact> createContact(@PathVariable Long userId, @RequestBody Contact contact){
+        return ResponseEntity.ok(contactService.createContact(userId, contact));
     }
 
-    //Get all contacts
-    @GetMapping("/contact")
-    private List<Contact> getAllContacts(){
-        return contactService.getAllContact();
+    @GetMapping
+    public List<Contact> getContactsByUser(@PathVariable Long userId){
+        return contactService.getContactByUserId(userId);
     }
 
-    //Get by id
-    @GetMapping("/contact/{id}")
-    public ResponseEntity<Contact> getContactById(@PathVariable Long id){
-        Contact contact = contactService.getContactById(id);
-        if (contact == null){
-            return ResponseEntity.notFound().build();
-        } return ResponseEntity.ok(contact);
+    @PutMapping("/{contactId}")
+    public ResponseEntity<Contact> updateContact(@PathVariable Long userId, @PathVariable Long contactId, @RequestBody Contact contact){
+        return ResponseEntity.ok(contactService.updateContact(userId,contactId, contact));
     }
 
-    //Update
-    @PutMapping("/contact/{id}")
-    public ResponseEntity<Contact> updateContact(@PathVariable Long id, @RequestBody Contact contact){
-        Contact existingContact = contactService.getContactById(id);
-        if (existingContact == null){
-            return ResponseEntity.notFound().build();
-        }
-        existingContact.setName(contact.getName());
-        existingContact.setEmail(contact.getEmail());
-        existingContact.setPhone(contact.getPhone());
-        Contact updateContact = contactService.updateContact(existingContact);
-        return ResponseEntity.ok(updateContact);
+    @DeleteMapping("/{contactId}")
+    public ResponseEntity<Void> deleteContact(@PathVariable Long userId, @PathVariable Long contactId) {
+        contactService.deleteContact(userId, contactId);
+        return ResponseEntity.noContent().build();
     }
-
-    //Delete
-    @DeleteMapping("/contact/{id}")
-    public ResponseEntity<?> deleteContact(@PathVariable Long id){
-        Contact existingContact = contactService.getContactById(id);
-        if (existingContact == null)
-            return ResponseEntity.notFound().build();
-        contactService.deleteContact(id);
-        return ResponseEntity.ok().build();
-    }
-
 }
+

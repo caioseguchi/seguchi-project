@@ -30,12 +30,12 @@ public class UserService {
     }
 
     //Find User
-    public Optional<User> getUserById(UUID id) {
+    public Optional<User> getUserById(Long id) {
         return userRepository.findById(id);
     }
 
     //Update User
-    public User updateUser(UUID id, User updateUser){
+    public User updateUser(Long id, User updateUser){
         return userRepository.findById(id)
                 .map(user ->{
                    user.setName(updateUser.getName());
@@ -43,11 +43,11 @@ public class UserService {
                    user.setPassword(updateUser.getPassword());
                    return userRepository.save(user);
                 })
-        .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+        .orElseThrow(() -> new RuntimeException("User not found"));
     }
 
     //Delete user
-    public void deleteUser(UUID id){
+    public void deleteUser(Long id){
         if (!userRepository.existsById(id)) {
             throw new UserNotFoundException("User with id" + id + "not found");
         }

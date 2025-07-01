@@ -28,18 +28,18 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public User getUserById(@PathVariable UUID id) {
+    public User getUserById(@PathVariable long id) {
         return userService.getUserById(id)
                 .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
     }
 
     @PutMapping("/{id}")
-    public User updateUser(@PathVariable UUID id, @Valid @RequestBody User user) {
+    public User updateUser(@PathVariable long id, @Valid @RequestBody User user) {
         return userService.updateUser(id, user);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteUser(@PathVariable UUID id) {
+    public void deleteUser(@PathVariable long id) {
         userService.deleteUser(id);
     }
 

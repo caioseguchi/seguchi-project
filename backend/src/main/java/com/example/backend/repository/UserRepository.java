@@ -9,13 +9,14 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, UUID> {
+public interface UserRepository extends JpaRepository<User, Long> {
+    Optional<User> findByEmail(String email);
+
+
     List<User> findByNameContainingIgnoreCase(String name);
     List<User> findByEmailContainingIgnoreCase(String email);
 
-    Optional<User> findByEmail(String email);
-
-    boolean existsById(UUID id);
+    boolean existsById(Long id);
     boolean existsByName(String name);
     boolean existsByEmail(String email);
 }
