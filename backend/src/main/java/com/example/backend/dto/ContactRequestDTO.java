@@ -1,7 +1,6 @@
 package com.example.backend.dto;
 
-public record ContactDTO(
-        Long contactId,
+public record ContactRequestDTO(
         String contactName,
         String contactEmail,
         String contactPhone
