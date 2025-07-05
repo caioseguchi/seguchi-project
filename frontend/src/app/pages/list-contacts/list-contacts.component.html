@@ -1,0 +1,16 @@
+<div class="container">
+  <h2>Lista de Contatos</h2>
+  <ul *ngIf="contacts.length > 0; else noContacts">
+    <li *ngFor="let contact of contacts">
+      <strong>{{ contact.contactName }}</strong
+      ><br />
+      Email: {{ contact.contactEmail }}<br />
+      Telefone: {{ contact.contactPhone }}
+      <hr />
+    </li>
+  </ul>
+
+  <ng-template #noContacts>
+    <p>Nenhum contato encontrado.</p>
+  </ng-template>
+</div>

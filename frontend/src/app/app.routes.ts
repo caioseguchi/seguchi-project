@@ -4,10 +4,10 @@ import { LoginComponent } from './pages/login/login.component';
 import { SignUpComponent } from './pages/signup/signup.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { ResumeComponent } from './pages/resume/resume.component';
-import { TaskComponent } from './pages/task/task.component';
 import { ContactPostComponent } from './pages/contact-post/contact-post.component';
 import { ContactGetAllComponent } from './pages/contact-get-all/contact-get-all.component';
-import { ContactUpdateComponent } from './pages/contact-update/contact-update.component';
+import { AuthGuardService } from './services/auth-guard.service';
+import { ListContactsComponent } from './pages/list-contacts/list-contacts.component';
 
 export const routes: Routes = [
   {
@@ -31,10 +31,6 @@ export const routes: Routes = [
     component: ResumeComponent,
   },
   {
-    path: 'task',
-    component: TaskComponent,
-  },
-  {
     path: 'contact',
     component: ContactPostComponent,
   },
@@ -43,7 +39,7 @@ export const routes: Routes = [
     component: ContactGetAllComponent,
   },
   {
-    path: 'update-contact/:id',
-    component: ContactUpdateComponent,
+    path: 'list',
+    component: ListContactsComponent,
   },
 ];

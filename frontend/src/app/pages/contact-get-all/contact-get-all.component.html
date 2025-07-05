@@ -13,19 +13,22 @@
       </tr>
     </thead>
     <tbody>
-      @for(contact of contacts; track contact.id){
+      @for(contact of contacts; track contact.contactId){
       <tr>
-        <td>{{ contact.name }}</td>
-        <td>{{ contact.email }}</td>
-        <td>{{ contact.phone }}</td>
+        <td>{{ contact.contactName }}</td>
+        <td>{{ contact.contactEmail }}</td>
+        <td>{{ contact.contactPhone }}</td>
         <td>
           <button
             class="btn btn-update"
-            routerLink="/update-contact/{{ contact.id }}"
+            [routerLink]="'/update-contact/' + contact.contactId"
           >
             Update
           </button>
-          <button class="btn btn-delete" (click)="deleteContact(contact.id)">
+          <button
+            class="btn btn-delete"
+            (click)="deleteContact(contact.contactId)"
+          >
             Delete
           </button>
         </td>

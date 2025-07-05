@@ -48,4 +48,3 @@ public class ContactController {
         return ResponseEntity.noContent().build();
     }
 }
-

@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
@@ -8,7 +7,7 @@ import {
 } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ContactService } from '../../services/contact.service';
-import { Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact-post',
@@ -34,13 +33,27 @@ export class ContactPostComponent implements OnInit {
     });
   }
 
-  contactPost() {
-    console.log(this.contactPostForm.value);
-    this.contactService
-      .postContact(this.contactPostForm.value)
-      .subscribe((res) => {
-        console.log(res);
+  contactPost(): void {
+    if (this.contactPostForm.invalid) {
+      console.warn('Formulário inválido');
+      return;
+    }
+
+    const contactData = {
+      name: this.contactPostForm.value.name,
+      email: this.contactPostForm.value.email,
+      phone: this.contactPostForm.value.phone,
+    };
+
+    this.contactService.createContact(contactData).subscribe({
+      next: (res) => {
+        console.log('Contato criado:', res);
         this.router.navigateByUrl('/contacts');
-      });
+      },
+      error: (err) => {
+        console.error('Erro ao criar contato:', err);
+        alert('Erro ao salvar contato. Verifique os dados e tente novamente.');
+      },
+    });
   }
 }

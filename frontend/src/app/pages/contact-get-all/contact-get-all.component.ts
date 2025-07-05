@@ -14,21 +14,38 @@ export class ContactGetAllComponent {
 
   constructor(private contactService: ContactService) {}
 
-  ngOnInit() {
-    this.getAllContact();
+  ngOnInit(): void {
+    this.contactService.getPokemon('Pikachu');
+    this.getAllContacts();
   }
 
-  getAllContact() {
-    this.contactService.getAllContacts().subscribe((res) => {
-      console.log(res);
-      this.contacts = res;
+  getAllContacts(): void {
+    this.contactService.getAllContacts().subscribe({
+      next: (res) => {
+        this.contacts = res;
+        console.log('Contatos carregados:', res);
+      },
+      error: (err) => {
+        console.error('Erro ao buscar contatos:', err);
+        alert('Erro ao carregar contatos.');
+      },
     });
   }
 
-  deleteContact(id: number) {
-    this.contactService.deleteContactById(id).subscribe((res) => {
-      console.log(res);
-      this.getAllContact();
+  deleteContact(id: number): void {
+    this.contactService.deleteContactById(id).subscribe({
+      next: () => {
+        console.log('Contato deletado com sucesso');
+        this.getAllContacts();
+      },
+      error: (err) => {
+        console.error('Erro ao deletar contato:', err);
+        alert('Erro ao deletar contato.');
+      },
     });
+  }
+
+  trackByContactId(index: number, contact: any): number {
+    return contact.contactId;
   }
 }
