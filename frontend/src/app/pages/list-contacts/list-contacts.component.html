@@ -1,16 +1,41 @@
-<div class="container">
-  <h2>Lista de Contatos</h2>
-  <ul *ngIf="contacts.length > 0; else noContacts">
-    <li *ngFor="let contact of contacts">
-      <strong>{{ contact.contactName }}</strong
-      ><br />
-      Email: {{ contact.contactEmail }}<br />
-      Telefone: {{ contact.contactPhone }}
-      <hr />
-    </li>
-  </ul>
+<main class="container">
+  <div class="container">
+    <button class="btn btn-primary" routerLink="/post-contact">
+      Post New Customer
+    </button>
 
-  <ng-template #noContacts>
-    <p>Nenhum contato encontrado.</p>
-  </ng-template>
-</div>
+    <!-- Check if there are any contacts -->
+    <table *ngIf="contacts.length > 0; else noContacts" class="table">
+      <thead>
+        <tr>
+          <th><strong>Name</strong></th>
+          <th><strong>Email</strong></th>
+          <th><strong>Phone</strong></th>
+          <th><strong>Action</strong></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let contact of contacts">
+          <td>{{ contact.contactName }}</td>
+          <td>{{ contact.contactEmail }}</td>
+          <td>{{ contact.contactPhone }}</td>
+          <td>
+            <!-- You can add click handlers here later -->
+            <button
+              class="btn btn-update"
+              [routerLink]="['/update-contact', contact.contactId]"
+            >
+              Update
+            </button>
+            <button class="btn btn-delete">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- If there are no contacts, show this message -->
+    <ng-template #noContacts>
+      <p>Nenhum contato encontrado.</p>
+    </ng-template>
+  </div>
+</main>

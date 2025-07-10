@@ -21,6 +21,24 @@
 
   <div class="projects-card">
     <app-project-card
+      [title]="'Contacts Agenda CRUD'"
+      [description]="
+        'After signing up and logging in through the Seguchi platform, users can access the Contact Agenda to manage their contact list. The app allows full CRUD operations (Create, Read, Update, Delete) on contact information including name, email, and phone. It features a complete frontend–backend integration with a secure authentication system and data persistence using a MySQL database.'
+      "
+      [technologies]="[
+        'Angular',
+        'TypeScript',
+        'HTML',
+        'CSS',
+        'Java',
+        'Spring Boot',
+        'MySQL',
+        'Spring Security',
+        'JWT'
+      ]"
+      [buttonLink]="'/list'"
+    ></app-project-card>
+    <app-project-card
       [title]="'Seguchi'"
       [description]="
         'A personal portfolio web app built to showcase my academic and personal projects, resume, and background. This full-stack project includes user authentication and protected routes, highlighting my transition into software development.'
@@ -53,24 +71,6 @@
         'MySQL'
       ]"
       [buttonLink]="'https://hotel-dublin-city-be28be526534.herokuapp.com'"
-    ></app-project-card>
-    <app-project-card
-      [title]="'Contacts Agenda'"
-      [description]="
-        'After signing up and logging in through the Seguchi platform, users can access the Contact Agenda to manage their contact list. The app allows full CRUD operations (Create, Read, Update, Delete) on contact information including name, email, and phone. It features a complete frontend–backend integration with a secure authentication system and data persistence using a MySQL database.'
-      "
-      [technologies]="[
-        'Angular',
-        'TypeScript',
-        'HTML',
-        'CSS',
-        'Java',
-        'Spring Boot',
-        'MySQL',
-        'Spring Security',
-        'JWT'
-      ]"
-      [buttonLink]="'/contacts'"
     ></app-project-card>
   </div>
 </main>

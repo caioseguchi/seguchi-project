@@ -2,6 +2,7 @@ package com.example.backend.controller;
 
 import com.example.backend.dto.ContactDTO;
 import com.example.backend.dto.ContactRequestDTO;
+import com.example.backend.mapper.ContactMapper;
 import com.example.backend.model.Contact;
 import com.example.backend.service.ContactService;
 import com.example.backend.service.UserService;
@@ -32,6 +33,16 @@ public class ContactController {
     @GetMapping
     public ResponseEntity<List<ContactDTO>> listContacts(@PathVariable Long userId) {
         return ResponseEntity.ok(contactService.listContacts(userId));
+    }
+
+    @GetMapping("/{contactId}")
+    public ResponseEntity<ContactDTO> getContactById(
+            @PathVariable Long userId,
+            @PathVariable Long contactId) {
+
+        // Lógica para buscar o contato com validação de segurança
+        Contact contact = contactService.getContactById(userId, contactId);
+        return ResponseEntity.ok(ContactMapper.toDTO(contact));
     }
 
     @PutMapping("/{contactId}")

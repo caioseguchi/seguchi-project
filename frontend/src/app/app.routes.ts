@@ -4,10 +4,10 @@ import { LoginComponent } from './pages/login/login.component';
 import { SignUpComponent } from './pages/signup/signup.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { ResumeComponent } from './pages/resume/resume.component';
-import { ContactPostComponent } from './pages/contact-post/contact-post.component';
-import { ContactGetAllComponent } from './pages/contact-get-all/contact-get-all.component';
 import { AuthGuardService } from './services/auth-guard.service';
 import { ListContactsComponent } from './pages/list-contacts/list-contacts.component';
+import { ListPostContactComponent } from './pages/list-post-contact/list-post-contact.component';
+import { ListUpdateContactComponent } from './pages/list-update-contact/list-update-contact.component';
 
 export const routes: Routes = [
   {
@@ -31,15 +31,15 @@ export const routes: Routes = [
     component: ResumeComponent,
   },
   {
-    path: 'contact',
-    component: ContactPostComponent,
-  },
-  {
-    path: 'contacts',
-    component: ContactGetAllComponent,
-  },
-  {
     path: 'list',
     component: ListContactsComponent,
+  },
+  {
+    path: 'post-contact',
+    component: ListPostContactComponent,
+  },
+  {
+    path: 'update-contact/:contactId',
+    component: ListUpdateContactComponent,
   },
 ];

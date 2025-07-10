@@ -11,19 +11,60 @@ export class ListService {
 
   constructor(private http: HttpClient) {}
 
-  // Method to fetch contacts for a specific user
-  listContacts(userId: number): Observable<Contact[]> {
-    // Retrieve the JWT token from session storage
+  //Helper method to construct the HTTP headers with JWT token
+  private getAuthHeaders(): HttpHeaders {
     const token = sessionStorage.getItem('auth-token');
-
-    // Set the Authorization header with the Bearer token
-    const headers = new HttpHeaders({
+    return new HttpHeaders({
       Authorization: `Bearer ${token}`,
     });
+  }
 
-    // Make a GET request to the backend to fetch user contacts
+  // GET /users/{userId}/contacts
+  listContacts(userId: number): Observable<Contact[]> {
     return this.http.get<Contact[]>(`${this.apiUrl}/${userId}/contacts`, {
-      headers,
+      headers: this.getAuthHeaders(),
     });
+  }
+
+  //Create a new contact for a specific user
+  //POST /users/{userId}/contacts
+  createContact(contactData: any): Observable<Contact> {
+    const userId = sessionStorage.getItem('userId');
+    return this.http.post<Contact>(
+      `${this.apiUrl}/${userId}/contacts`,
+      contactData,
+      { headers: this.getAuthHeaders() }
+    );
+  }
+
+  //Fetch a contact by its ID
+  //GET /users/{userId}/contacts/{contactId}
+  getContactById(contactId: number): Observable<Contact> {
+    const userId = sessionStorage.getItem('userId');
+    return this.http.get<Contact>(
+      `${this.apiUrl}/${userId}/contacts/${contactId}`,
+      { headers: this.getAuthHeaders() }
+    );
+  }
+
+  //Update an existing contact
+  //PUT /users/{userId}/contacts/{contactId}
+  updateContact(contactId: number, contactData: any): Observable<Contact> {
+    const userId = sessionStorage.getItem('userId');
+    return this.http.put<Contact>(
+      `${this.apiUrl}/${userId}/contacts/${contactId}`,
+      contactData,
+      { headers: this.getAuthHeaders() }
+    );
+  }
+
+  //Delete a contact by its ID
+  //DELETE /users/{userId}/contacts/{contactId}
+  deleteContact(contactId: number): Observable<void> {
+    const userId = sessionStorage.getItem('userId');
+    return this.http.delete<void>(
+      `${this.apiUrl}/${userId}/contacts/${contactId}`,
+      { headers: this.getAuthHeaders() }
+    );
   }
 }

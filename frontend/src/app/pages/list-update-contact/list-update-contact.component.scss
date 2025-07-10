@@ -14,22 +14,20 @@ table {
   border-radius: 8px;
   overflow: hidden;
 
+  margin-top: 20px;
   font-family: $font-code;
   color: $text-color;
-  background-color: $black-secondary-bg;
-  margin-top: 20px;
 
   border: 1px solid $text-color;
 
   thead {
-    background-color: $black-bg;
-
     th {
       padding: 12px;
       font-family: $font-primary;
       font-size: 16px;
       text-align: left;
       color: $secondary-color;
+      background-color: $black-secondary-bg;
       width: 25%;
     }
   }
@@ -38,6 +36,7 @@ table {
     td {
       padding: 10px 12px;
       border-top: 1px solid $text-color;
+      background-color: $text-color;
     }
   }
 }

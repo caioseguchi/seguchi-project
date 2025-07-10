@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ContactGetAllComponent } from './contact-get-all.component';
+import { ListPostContactComponent } from './list-post-contact.component';
 
-describe('ContactGetAllComponent', () => {
-  let component: ContactGetAllComponent;
-  let fixture: ComponentFixture<ContactGetAllComponent>;
+describe('ListPostContactComponent', () => {
+  let component: ListPostContactComponent;
+  let fixture: ComponentFixture<ListPostContactComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ContactGetAllComponent]
+      imports: [ListPostContactComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ContactGetAllComponent);
+    fixture = TestBed.createComponent(ListPostContactComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

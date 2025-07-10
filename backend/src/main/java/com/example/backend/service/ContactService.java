@@ -36,8 +36,8 @@ public class ContactService {
         }
 
 
-        //User user = userRepository.findById(userId)
-          //      .orElseThrow(()-> new RuntimeException("User not found"));
+        User user = userRepository.findById(userId)
+                .orElseThrow(()-> new RuntimeException("User not found"));
 
         Contact contact = ContactMapper.toEntity(dto);
         contact.setUser(authenticatedUser);
@@ -56,6 +56,20 @@ public class ContactService {
                 .stream()
                 .map(ContactMapper::toDTO)
                 .collect(Collectors.toList());
+    }
+
+    //Get by Id
+    public Contact getContactById(Long userId, Long contactId) {
+        User authenticatedUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        Contact contact = contactRepository.findById(contactId)
+                .orElseThrow(() -> new RuntimeException("Contact not found"));
+
+        if (!contact.getUser().getId().equals(userId) || !authenticatedUser.getId().equals(userId)) {
+            throw new AccessDeniedException("Access denied");
+        }
+
+        return contact;
     }
 
     //Put
