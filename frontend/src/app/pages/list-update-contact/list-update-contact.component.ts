@@ -19,6 +19,7 @@ import { Contact } from '../../types/contact.types';
   styleUrl: './list-update-contact.component.scss',
 })
 export class ListUpdateContactComponent implements OnInit {
+  // Form group to handle form inputs and validation
   contactUpdateForm!: FormGroup;
   userId!: number;
   contactId!: number;

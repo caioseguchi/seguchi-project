@@ -1,76 +1,61 @@
 @import "../../../styles/variables.scss";
 @import "../../../styles/font.scss";
 
-main {
-  margin-top: 40px;
-  height: 100%;
-}
-
-table {
-  width: 100%;
-  //border with radius
-  border-collapse: separate;
-  border-spacing: 0;
-  border-radius: 8px;
-  overflow: hidden;
-
-  margin-top: 20px;
-  font-family: $font-code;
+* {
   color: $text-color;
+  font-family: $font-code;
+}
 
-  border: 1px solid $text-color;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-top: 10px;
+}
 
-  thead {
-    th {
-      padding: 12px;
-      font-family: $font-primary;
-      font-size: 16px;
-      text-align: left;
-      color: $secondary-color;
-      background-color: $black-secondary-bg;
-      width: 25%;
-    }
-  }
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin: 40px;
 
-  tbody {
-    td {
-      padding: 10px 12px;
-      border-top: 1px solid $text-color;
-      background-color: $text-color;
-    }
+  color: $text-color;
+  background-color: $black-secondary-bg;
+  font-family: $font-primary;
+  width: 300px;
+
+  border-radius: 10px;
+
+  h2 {
+    font-size: 20px;
+    font-family: $font-primary;
+    font-weight: bold;
+    margin-bottom: 45px;
   }
 }
 
-// Buttons
-.btn {
-  border: none;
+button {
+  width: 100%;
   border-radius: 8px;
-  padding: 10px 20px;
   font-size: 14px;
   font-weight: 500;
-  font-family: $font-code;
+  border: none;
+  background-color: transparent;
+  padding: 12px 24px;
   cursor: pointer;
-  transition: background-color 0.3s ease, opacity 0.3s ease;
+
+  margin-top: 20px;
 
   &:hover {
-    opacity: 0.8;
+    opacity: 0.5;
   }
-}
 
-.btn-primary {
-  background-color: $primary-color;
-  color: $black-secondary-bg;
-  margin-bottom: 20px;
-}
-
-.btn-update {
-  background-color: lighten($primary-color, 15%);
-  color: $black-secondary-bg;
-  margin: 4px;
-}
-
-.btn-delete {
-  background-color: #d32f2f;
-  color: $secondary-color;
-  margin: 4px;
+  &.btn-primary {
+    background-color: $primary-color;
+    color: $black-secondary-bg;
+    box-shadow: 2%;
+  }
 }

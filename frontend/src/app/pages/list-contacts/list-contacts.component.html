@@ -27,7 +27,12 @@
             >
               Update
             </button>
-            <button class="btn btn-delete">Delete</button>
+            <button
+              class="btn btn-delete"
+              (click)="deleteContactById(contact.contactId)"
+            >
+              Delete
+            </button>
           </td>
         </tr>
       </tbody>

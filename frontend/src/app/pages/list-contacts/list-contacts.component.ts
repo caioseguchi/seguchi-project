@@ -34,4 +34,20 @@ export class ListContactsComponent implements OnInit {
       },
     });
   }
+
+  deleteContactById(contactId: number): void {
+    if (!confirm('Are you sure that you want to delete this contact?')) return;
+
+    this.listService.deleteContact(contactId).subscribe({
+      next: () => {
+        // Remove contact from list
+        this.contacts = this.contacts.filter((c) => c.contactId !== contactId);
+        console.log(`Contact ID ${contactId} deleted.`);
+      },
+      error: (err) => {
+        console.error('Error deleting contact:', err);
+        alert('Error deleting contact.');
+      },
+    });
+  }
 }
