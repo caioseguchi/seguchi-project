@@ -58,7 +58,7 @@ public class ContactService {
                 .collect(Collectors.toList());
     }
 
-    //Get by Id
+    //Get by id
     public Contact getContactById(Long userId, Long contactId) {
         User authenticatedUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
